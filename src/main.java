@@ -11,5 +11,6 @@ public class main {
         operaciones op=new operaciones();
         ControladorPrincipal ctrl=new ControladorPrincipal(pri,op);
         ctrl.iniciar();
+        System.out.printf("ho;a");
     }
 }
