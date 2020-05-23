@@ -35,9 +35,16 @@ public class ControladorPrincipal implements ActionListener {
         String data[][]={};
         String col[]={"#Inventario","Indentificación","Fecha Garantía","Departamento"};
         tablaDatos=new DefaultTableModel(data, col);
-        view.table1.setModel(tablaDatos);
+        view.table1= new JTable(data,col);
+        view.table1.setFillsViewportHeight(true);
+
+        JScrollPane scrollPane=new JScrollPane(view.table1);
+
+
+
+        //  view.table1.setModel(tablaDatos);
         System.out.println("talbaaaaaaaaaaaaaa");
-        tablaDatos.insertRow(tablaDatos.getRowCount(), new Object[]{});
+     //   tablaDatos.insertRow(tablaDatos.getRowCount(), new Object[]{});
     }
     @Override
     public void actionPerformed(ActionEvent e) {
