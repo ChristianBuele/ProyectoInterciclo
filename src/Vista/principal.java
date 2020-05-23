@@ -10,8 +10,10 @@ public class principal extends JFrame{
     public JTable table1;
     public JTextArea textArea1;
     public JPanel panelPrincipal;
+    public JPanel panelpeque;
 
     public principal (){
         add(panelPrincipal);
+        //panelPrincipal.add(panelpeque);
     }
 }
