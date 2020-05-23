@@ -4,6 +4,7 @@ import Modelo.operaciones;
 import Vista.principal;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,6 +14,7 @@ public class ControladorPrincipal implements ActionListener {
     private int[] Q=new int[8];
     private int[] M=new int[8];
     private String salida="";
+    private DefaultTableModel tablaDatos;
 
     public ControladorPrincipal(principal view, operaciones model) {
         this.view=view;
@@ -23,10 +25,19 @@ public class ControladorPrincipal implements ActionListener {
         view.setTitle("Algoritmo de Booth");
         view.setSize(700,700);
         view.setVisible(true);
+        inicarTabla();
     }
     public void arranca(String num,int [] arreglo){
         int a=Integer.valueOf(num);
         model.binary(a,arreglo);
+    }
+    public void inicarTabla(){
+        String data[][]={};
+        String col[]={"#Inventario","Indentificación","Fecha Garantía","Departamento"};
+        tablaDatos=new DefaultTableModel(data, col);
+        view.table1.setModel(tablaDatos);
+        System.out.println("talbaaaaaaaaaaaaaa");
+        tablaDatos.insertRow(tablaDatos.getRowCount(), new Object[]{});
     }
     @Override
     public void actionPerformed(ActionEvent e) {

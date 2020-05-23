@@ -158,4 +158,7 @@
       </tabbedpane>
     </children>
   </grid>
+  <inspectionSuppressions>
+    <suppress inspection="NoScrollPane" id="5c450"/>
+  </inspectionSuppressions>
 </form>
